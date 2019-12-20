@@ -59,7 +59,7 @@ function updateCartPreview() {
   var listContainer = document.createElement('ul');
 
   var listItem = document.createElement('li');
-  listItem.textContent = `Item: ${this.product} Quantity: ${this.quantity}`;
+  listItem.textContent = `Item: ${cart.items[cart.items.length - 1].product}, Quantity: ${cart.items[cart.items.length - 1].quantity}.`;
   listContainer.appendChild(listItem);
 
   var cartContentsEl = document.getElementById('cartContents');
