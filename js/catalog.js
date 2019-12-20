@@ -36,7 +36,7 @@ function handleSubmit(event) {
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
-  var product = Product.allProducts[document.getElementById("items").selectedIndex].name;
+  var product = Product.allProducts[document.getElementById('items').selectedIndex].name;
   // TODO: get the quantity
   var quantity = document.getElementById('quantity').value;
   // TODO: using those, add one item to the Cart
@@ -56,7 +56,17 @@ function updateCounter() {
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
+  var listContainer = document.createElement('ul');
+
+  var listItem = document.createElement('li');
+  listItem.textContent = `Item: ${this.product} Quantity: ${this.quantity}`;
+  listContainer.appendChild(listItem);
+
+  var cartContentsEl = document.getElementById('cartContents');
+  cartContentsEl.appendChild(listContainer);
+
 }
+
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
